@@ -35,9 +35,13 @@ def postprocess_output(output):
     output = (output[:, 1, :, :] > 0.5).float().squeeze(0).squeeze(0) 
     return output
 
-def overlay_mask_on_image(image, mask):
-    """Superpone la máscara en la imagen original."""
-    image_np = np.array(image.resize(mask.shape[::-1]))  # Redimensionar la imagen original
+def overlay_mask_on_image(image, mask, alpha=0.4):
+    """Superpone la máscara en la imagen original con intensidad ajustable."""
+    # Convertir la imagen a numpy y redimensionarla al tamaño de la máscara
+    image_np = np.array(image.resize(mask.shape[::-1]))
+    # Asegurarse de que la máscara tiene valores binarios
+    mask = mask / 255.0  # Normalizar la máscara a rango [0, 1]
     mask_colored = np.zeros_like(image_np)
     mask_colored[:, :, 1] = mask * 255  # Usar el canal verde para la máscara
-    return (0.6 * image_np + 0.4 * mask_colored).astype(np.uint8)
+    # Mezclar imagen y máscara usando alpha
+    return ((1 - alpha) * image_np + alpha * mask_colored).astype(np.uint8)
