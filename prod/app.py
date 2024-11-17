@@ -57,7 +57,7 @@ if uploaded_file:
 
     # Ajustar la intensidad de la superposición
     st.title("¡Podés ajustar la intensidad de la superposición!")
-    alpha = st.slider("Ajustá la intensidad del verde", 0.0, 1.0, 0.4, 0.05)
+    alpha = st.slider("Ajustá la intensidad del verde (correspondiente al tumor)", 0.0, 1.0, 0.4, 0.05)
     overlay_image = overlay_mask_on_image(resized_image, pred_mask_np, alpha=alpha)
 
 
