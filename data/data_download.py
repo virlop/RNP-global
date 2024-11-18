@@ -1,4 +1,11 @@
 import kagglehub
+from PIL import Image
+import os
+import numpy as np
+import torch
+from torch.utils.data import Dataset
+import matplotlib.pyplot as plt
+
 # Descargo el dataset de KAGGLE
 path = kagglehub.dataset_download("nikhilroxtomar/brain-tumor-segmentation")
 print("Path to dataset files:", path)
