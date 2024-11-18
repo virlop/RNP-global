@@ -18,9 +18,15 @@ Este proyecto utiliza modelos de redes neuronales profundas para segmentar tumor
     - requirements.txt: Dependencias necesarias para ejecutar el proyecto.
 
 ## Uso
-Clonar el repositorio:
-git clone https://github.com/virlop/RNP-global.git
-Instalar dependencias:
+1. Clonar el repositorio:
+ ```bash
+ git clone https://github.com/virlop/RNP-global.git
+  ```
+2. Instalar dependencias:
+ ```bash
 pip install -r requirements.txt
-Ejecutar app de streamlit:
+ ```
+3. Ejecutar app de streamlit:
+ ```bash
 streamlit run prod\app.py
+ ```
