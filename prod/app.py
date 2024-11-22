@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from PIL import Image
 import torch
@@ -15,7 +16,7 @@ st.title("Segmentación Semántica de Tumores Cerebrales")
 # Cargar el modelo
 @st.cache_resource
 def get_model():
-    model = load_model("prod/model.pth")
+    model = load_model(os.path.join("prod", "model"))
     model.eval()
     return model
 
