@@ -16,7 +16,7 @@ st.title("Segmentación Semántica de Tumores Cerebrales")
 # Cargar el modelo
 @st.cache_resource
 def get_model():
-    model = load_model(os.path.join("prod", "model"))
+    model = load_model(os.path.join("prod", "model.pth"))
     model.eval()
     return model
 
