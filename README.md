@@ -1,6 +1,9 @@
 # Proyecto de Segmentación Semántica de Tumores Cerebrales
 Este proyecto utiliza modelos de redes neuronales profundas para segmentar tumores cerebrales en imágenes de resonancia magnética (MRI). Incluye el entrenamiento de modelos con diferentes funciones de pérdida (Cross Entropy y Focal Loss) y una aplicación interactiva para visualizar las predicciones.
 
+Link:
+https://segmentation-tumores.streamlit.app
+
 ## Estructura del proyecto
 - data/: Contiene el código de descarga del dataset desde Kaggle y algunas imágenes con sus máscaras correspondientes para probar la interfaz.
 
